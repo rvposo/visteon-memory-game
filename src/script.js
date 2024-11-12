@@ -5,15 +5,15 @@ const ValidatePlayer = ({ target }) => {
   if (target.value.length > 3) {
     playButton.removeAttribute("disabled");
     return;
-    console.log("working");
   }
   playButton.setAttribute("disabled", "");
 };
 
 const Play = (event) => {
   event.preventDefault();
-  localStorage.setItem("player", inputPlayerName.value);
-  console.log(inputPlayerName.value);
+
+  localStorage.setItem("players", inputPlayerName.value);
+  //window.location = "pages/game.html";
 };
 
 inputPlayerName.addEventListener("input", ValidatePlayer);

@@ -4,13 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css" />
     <script defer src="./src/script.js"></script>
   </head>
   <body>
-    <form action="">
-      <label for="">Player's name</label>
-      <input class="player-name" type="text" />
-      <button type="submit" class="play-button" disabled>Play</button>
-    </form>
+    <div class="game-init">
+      <form action="">
+        <div class="player-block">
+          <label for="" style="display: block">Jogador</label>
+          <input class="player-name" type="text" />
+        </div>
+
+        <div>
+          <label for="" style="display: block">Setor</label>
+          <select name="" id="">
+            <option value="">Visitante</option>
+            <option value="">Engenharia FA</option>
+            <option value="">Engenharia SMD</option>
+            <option value="">Produção SMD</option>
+            <option value="">Produção FA</option>
+          </select>
+        </div>
+
+        <button type="submit" class="play-button" disabled>Play</button>
+      </form>
+    </div>
   </body>
 </html>
