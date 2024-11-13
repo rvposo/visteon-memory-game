@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="game-init">
-      <form action="">
+      <form class="play-button" action="">
         <div class="player-block">
           <label for="" style="display: block">Jogador</label>
           <input class="player-name" type="text" />
@@ -17,16 +17,17 @@
 
         <div>
           <label for="" style="display: block">Setor</label>
-          <select name="" id="">
-            <option value="">Visitante</option>
-            <option value="">Engenharia FA</option>
+          <select class="area" name="" id="">
+            <option value="Visitante">Visitante</option>
+            <option value="Engenharia FA">Engenharia FA</option>
             <option value="">Engenharia SMD</option>
             <option value="">Produção SMD</option>
             <option value="">Produção FA</option>
+            <option value="Recursos Humanos">Recursos Humanos</option>
           </select>
         </div>
 
-        <button type="submit" class="play-button" disabled>Play</button>
+        <button id="botao-submit" type="submit" disabled>Play</button>
       </form>
     </div>
   </body>
