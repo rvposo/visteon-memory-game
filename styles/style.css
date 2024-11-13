@@ -18,6 +18,8 @@ body {
 
 .player-block {
   padding: 20px;
+  background-color: red;
+  width: 100%;
 }
 
 .player-block > label {
