@@ -1,20 +1,24 @@
 const inputPlayerName = document.querySelector(".player-name");
-const playButton = document.querySelector(".play-button");
+const setArea = document.querySelector(".area");
+const playerForm = document.querySelector(".play-button");
+const submitButton = document.getElementById("botao-submit");
 
 const ValidatePlayer = ({ target }) => {
   if (target.value.length > 3) {
-    playButton.removeAttribute("disabled");
+    submitButton.removeAttribute("disabled");
+    console.log("teste");
     return;
   }
-  playButton.setAttribute("disabled", "");
+  submitButton.setAttribute("disabled", "");
 };
 
 const Play = (event) => {
   event.preventDefault();
 
-  localStorage.setItem("players", inputPlayerName.value);
+  localStorage.setItem("player", inputPlayerName.value);
+  localStorage.setItem("area", setArea.value);
   //window.location = "pages/game.html";
 };
 
 inputPlayerName.addEventListener("input", ValidatePlayer);
-playButton.addEventListener("submit", Play);
+playerForm.addEventListener("submit", Play);
