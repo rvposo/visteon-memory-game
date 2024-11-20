@@ -17,7 +17,7 @@ const Play = (event) => {
 
   localStorage.setItem("player", inputPlayerName.value);
   localStorage.setItem("area", setArea.value);
-  //window.location = "pages/game.html";
+  window.location = "pages/game.html";
 };
 
 inputPlayerName.addEventListener("input", ValidatePlayer);
