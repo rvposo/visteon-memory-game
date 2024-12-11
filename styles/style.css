@@ -80,9 +80,3 @@ select:invalid {
   font-size: 25px;
   margin-bottom: 10px;
 }
-
-#botao-submit {
-  margin-top: 25px;
-  /* width: 100%; */
-  padding: 10px 0px 10px 0px;
-}

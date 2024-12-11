@@ -1,6 +1,18 @@
 const grid = document.querySelector(".grid");
-
+const timer = document.querySelector(".timer");
 const carsCards = ["gm", "hyundai", "renault", "stellantis", "vw"];
+
+const startTimer = () => {
+  this.loop = setInterval(() => {
+    const currentTime = +timer.innerHTML;
+    timer.innerHTML = currentTime + 1;
+    if (currentTime === 10) {
+      timer.innerHTML = 0;
+      alert("game over");
+      window.location = "../index.html";
+    }
+  }, 1000);
+};
 
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -92,5 +104,5 @@ const checkEndGame = () => {
     }, 500);
   }
 };
-
+startTimer();
 loadGame();
