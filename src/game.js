@@ -1,3 +1,10 @@
+/* 
+TO DO: Adicionar mais 1 par de cartas e fazer grid 3x4 ou 4x3 
+       Adicionar incremento de jogadores, armazenar no localStorage e acrescentar no rank.
+       Atualizar layout das cartas front e talvez back.
+
+*/
+
 const grid = document.querySelector(".grid");
 const timer = document.querySelector(".timer");
 const carsCards = ["gm", "hyundai", "renault", "stellantis", "vw"];
