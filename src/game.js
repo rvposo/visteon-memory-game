@@ -1,21 +1,37 @@
 /* 
-TO DO: Adicionar mais 1 par de cartas e fazer grid 3x4 ou 4x3 
+TO DO: Adicionar mais 1 par de cartas e fazer grid 3x4 ou 4x3 (done)
        Adicionar incremento de jogadores, armazenar no localStorage e acrescentar no rank.
        Atualizar layout das cartas front e talvez back.
 
 */
-
+const spanPlayerName = document.getElementById("Player-name");
 const grid = document.querySelector(".grid");
 const timer = document.querySelector(".timer");
 const carsCards = ["gm", "hyundai", "renault", "stellantis", "vw", "vw2"];
+const players = [];
+
+const rankPlayers = () => {
+  class Player {
+    constructor() {
+      this.name = localStorage.getItem("player");
+      this.area = localStorage.getItem("area");
+    }
+  }
+
+  let newPlayer = new Player();
+  players.push(newPlayer);
+  console.log(players);
+};
 
 const startTimer = () => {
+  let timeLeft = 1000;
+  timer.innerHTML = timeLeft;
   this.loop = setInterval(() => {
-    const currentTime = +timer.innerHTML;
-    timer.innerHTML = currentTime + 1;
-    if (currentTime === 10000) {
-      timer.innerHTML = 0;
-      alert("game over");
+    timeLeft -= 1;
+    timer.innerHTML = timeLeft;
+    if (timeLeft === 0) {
+      clearInterval(this.loop);
+      alert("Game over");
       window.location = "../index.html";
     }
   }, 1000);
@@ -106,10 +122,20 @@ const checkEndGame = () => {
       alert(
         `O jogador ${localStorage.getItem(
           "player"
-        )} finalizou o jogo, setor ${localStorage.getItem("area")} `
+        )} finalizou o jogo, setor ${localStorage.getItem("area")}, tempo: ${
+          timer.innerHTML
+        } `
       );
+
+      window.location = "../index.html";
     }, 500);
   }
 };
-startTimer();
-loadGame();
+
+window.onload = () => {
+  const playerName = localStorage.getItem("player");
+  spanPlayerName.innerHTML = playerName;
+  startTimer();
+  loadGame();
+  rankPlayers();
+};
