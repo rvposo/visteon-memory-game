@@ -7,13 +7,13 @@ TO DO: Adicionar mais 1 par de cartas e fazer grid 3x4 ou 4x3
 
 const grid = document.querySelector(".grid");
 const timer = document.querySelector(".timer");
-const carsCards = ["gm", "hyundai", "renault", "stellantis", "vw"];
+const carsCards = ["gm", "hyundai", "renault", "stellantis", "vw", "vw2"];
 
 const startTimer = () => {
   this.loop = setInterval(() => {
     const currentTime = +timer.innerHTML;
     timer.innerHTML = currentTime + 1;
-    if (currentTime === 10) {
+    if (currentTime === 10000) {
       timer.innerHTML = 0;
       alert("game over");
       window.location = "../index.html";
@@ -99,7 +99,7 @@ const loadGame = () => {
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll(".disabled-card");
 
-  if (disabledCards.length === 10) {
+  if (disabledCards.length === 12) {
     console.log(localStorage.getItem("player"));
     //ao adicionar mais cartas, usar comparação entre o array de cartas desabilitadas e o total de cartas (duplicateCards)
     setTimeout(() => {
