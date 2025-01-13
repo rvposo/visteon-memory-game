@@ -8,23 +8,46 @@ const spanPlayerName = document.getElementById("Player-name");
 const grid = document.querySelector(".grid");
 const timer = document.querySelector(".timer");
 const carsCards = ["gm", "hyundai", "renault", "stellantis", "vw", "vw2"];
-const players = [];
+let players = JSON.parse(localStorage.getItem("players")) || [];
 
 const rankPlayers = () => {
-  class Player {
-    constructor() {
-      this.name = localStorage.getItem("player");
-      this.area = localStorage.getItem("area");
+  let aux;
+  const player = {
+    name: localStorage.getItem("player"),
+    area: localStorage.getItem("area"),
+    time: localStorage.getItem("time"),
+  };
+
+  player.time = 30 - localStorage.getItem("time");
+
+  players.push(player);
+  localStorage.setItem("players", JSON.stringify(players));
+  console.log(`player ${player.name} added`);
+  console.log(players);
+
+  //ordenação
+  for (let i = 0; i <= players.length - 1; i++) {
+    let min_i = i;
+
+    for (let j = i + 1; j < players.length; j++) {
+      if (players[j].time < players[min_i].time) {
+        min_i = j;
+      }
+      aux = players[i];
+      players[i] = players[min_i];
+      players[min_i] = aux;
     }
   }
 
-  let newPlayer = new Player();
-  players.push(newPlayer);
-  console.log(players);
+  alert(
+    players.map((p, index) => `${index + 1}. ${p.name} - ${p.time}s`).join("\n")
+  );
+
+  localStorage.setItem("players", JSON.stringify(players));
 };
 
 const startTimer = () => {
-  let timeLeft = 1000;
+  let timeLeft = 30;
   timer.innerHTML = timeLeft;
   this.loop = setInterval(() => {
     timeLeft -= 1;
@@ -117,16 +140,20 @@ const checkEndGame = () => {
 
   if (disabledCards.length === 12) {
     console.log(localStorage.getItem("player"));
-    //ao adicionar mais cartas, usar comparação entre o array de cartas desabilitadas e o total de cartas (duplicateCards)
     setTimeout(() => {
+      console.log(localStorage.getItem("time"));
+      console.log(timer.innerHTML);
       alert(
         `O jogador ${localStorage.getItem(
           "player"
         )} finalizou o jogo, setor ${localStorage.getItem("area")}, tempo: ${
-          timer.innerHTML
+          30 - timer.innerHTML
         } `
       );
 
+      localStorage.setItem("time", +timer.innerHTML);
+
+      rankPlayers();
       window.location = "../index.html";
     }, 500);
   }
@@ -137,5 +164,4 @@ window.onload = () => {
   spanPlayerName.innerHTML = playerName;
   startTimer();
   loadGame();
-  rankPlayers();
 };
