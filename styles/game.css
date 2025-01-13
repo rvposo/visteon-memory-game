@@ -6,7 +6,7 @@ main {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  /* background-color: rgb(12, 61, 96); */
+  background-color: rgb(236, 114, 3);
 }
 
 header {
@@ -41,7 +41,7 @@ header {
   width: 100%;
   max-width: 800px;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: 8px;
   margin: 0 auto;
   justify-content: center;
 }
@@ -52,7 +52,7 @@ header {
   /* background-color: red; btw pode ser interessante deixar laranja opaco?*/
   border-radius: 5px;
   position: relative;
-  border: solid;
+  /* border: solid; */
   transition: all 400ms ease;
   transform-style: preserve-3d;
 }
