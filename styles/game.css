@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(12, 61, 96);
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -6,7 +10,8 @@ main {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: rgb(236, 114, 3);
+  /* background-color: rgb(236, 114, 3); */
+  /* background-color: rgb(12, 61, 96); */
 }
 
 header {
@@ -17,7 +22,8 @@ header {
   max-width: 650px;
   padding: 20px;
   border-radius: 5px;
-  background-color: rgb(12, 61, 96);
+  /* background-color: rgb(12, 61, 96); */
+  background-color: rgb(236, 114, 3);
   color: #fff;
   margin-bottom: 30px;
   font-size: 1.2em;

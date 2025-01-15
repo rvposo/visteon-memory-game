@@ -24,18 +24,40 @@
           <label for="" style="display: block">Setor</label>
           <select required class="area" name="" id="">
             <option value="" disabled selected hidden>Selecione o setor</option>
-            <option value="Visitante">Visitante</option>
+            <!-- <option value="Visitante">Visitante</option> -->
             <option value="Engenharia FA">Engenharia FA</option>
             <option value="Engenharia SMD">Engenharia SMD</option>
             <option value="Produção SMD">Produção SMD</option>
             <option value="Produção FA">Produção FA</option>
             <option value="Recursos Humanos">Recursos Humanos</option>
             <option value="Qualidade">Qualidade</option>
+            <option value="Warehouse">Warehouse</option>
+            <option value="Packing">Packing</option>
           </select>
-        </div>
 
-        <button id="botao-submit" type="submit" disabled>Play</button>
+          <button id="botao-submit" type="submit" disabled>Play</button>
+        </div>
       </form>
+    </div>
+
+    <div class="tierlist">
+      <table>
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Time</th>
+            <th>Place</th>
+          </tr>
+        </thead>
+
+        <tbody id="rank-info">
+          <tr id="player-info">
+            <td id="player-tier">Raposo</td>
+            <td id="time-tier">20s</td>
+            <td id="place-tier">1</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>
