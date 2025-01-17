@@ -7,11 +7,23 @@ const timeTier = document.getElementById("time-tier");
 const placeTier = document.getElementById("place-tier");
 const tierlist = document.getElementById("rank-info");
 const playerInfo = document.getElementById("player-info");
+let players = JSON.parse(localStorage.getItem("players")) || [];
 
-//
+//players.map((p, index) => `${index + 1}. ${p.name} - ${p.time}s`).join("\n")
 const rankList = () => {
-  playerInfo.innerHTML = `<tr><td>${localStorage.getItem("player")}</td> </tr>
-                          <tr><td>${localStorage.getItem("time")}</td> </tr>`; //usar localstorage PLAYERS
+  console.log(JSON.parse(localStorage.getItem("players")));
+
+  console.log(
+    players.map((p, index) => `${index + 1}. ${p.name} - ${p.time}s`).join("\n")
+  );
+
+  let playerRow = document.createElement("tr");
+
+  // playerInfo.innerHTML = `<tr><td>${players[0]}</td></tr>
+  //                         <tr><td>${localStorage.getItem("time")}</td> </tr>
+  //                         <tr><td>${localStorage.getItem("")}</td> </tr>`; //usar localstorage PLAYERS
+
+  playerInfo.innerHTML = players.map();
   tierlist.appendChild(playerInfo);
 
   // playerTier.innerHTML = localStorage.getItem("player");

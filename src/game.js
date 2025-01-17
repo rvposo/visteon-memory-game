@@ -21,7 +21,7 @@ const rankPlayers = () => {
   player.time = 30 - localStorage.getItem("time");
 
   players.push(player);
-  localStorage.setItem("players", JSON.stringify(players));
+  //localStorage.setItem("players", JSON.stringify(players));
   console.log(`player ${player.name} added`);
   console.log(players);
 
