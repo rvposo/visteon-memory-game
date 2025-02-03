@@ -108,13 +108,11 @@ select:invalid {
 
 .tierlist {
   display: flex;
-  background-color: yellow;
 }
 
 .tierlist > table {
   align-items: center;
   justify-content: center;
-  background-color: blue;
   width: 100%;
 }
 

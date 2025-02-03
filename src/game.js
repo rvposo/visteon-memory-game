@@ -47,7 +47,7 @@ const rankPlayers = () => {
 };
 
 const startTimer = () => {
-  let timeLeft = 10000;
+  let timeLeft = 30;
   timer.innerHTML = timeLeft;
   this.loop = setInterval(() => {
     timeLeft -= 1;

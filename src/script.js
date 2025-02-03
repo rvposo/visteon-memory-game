@@ -11,22 +11,29 @@ let players = JSON.parse(localStorage.getItem("players")) || [];
 
 //players.map((p, index) => `${index + 1}. ${p.name} - ${p.time}s`).join("\n")
 const rankList = () => {
-  console.log(JSON.parse(localStorage.getItem("players")));
+  const players = JSON.parse(localStorage.getItem("players")) || [];
+  const tableBody = document.getElementById("rank-info");
 
-  console.log(
-    players.map((p, index) => `${index + 1}. ${p.name} - ${p.time}s`).join("\n")
-  );
+  // Clear existing table rows
+  tableBody.innerHTML = "";
 
-  let playerRow = document.createElement("tr");
+  players.forEach((player, index) => {
+    const row = document.createElement("tr");
 
-  // playerInfo.innerHTML = `<tr><td>${players[0]}</td></tr>
-  //                         <tr><td>${localStorage.getItem("time")}</td> </tr>
-  //                         <tr><td>${localStorage.getItem("")}</td> </tr>`; //usar localstorage PLAYERS
+    const rankCell = document.createElement("td");
+    rankCell.textContent = index + 1;
+    row.appendChild(rankCell);
 
-  playerInfo.innerHTML = players.map();
-  tierlist.appendChild(playerInfo);
+    const nameCell = document.createElement("td");
+    nameCell.textContent = player.name;
+    row.appendChild(nameCell);
 
-  // playerTier.innerHTML = localStorage.getItem("player");
+    const timeCell = document.createElement("td");
+    timeCell.textContent = player.time;
+    row.appendChild(timeCell);
+
+    tableBody.appendChild(row);
+  });
 };
 
 const ValidatePlayer = ({ target }) => {
