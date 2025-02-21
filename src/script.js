@@ -17,6 +17,9 @@ const rankList = () => {
   // Clear existing table rows
   tableBody.innerHTML = "";
 
+
+  //todo: style the table
+
   players.forEach((player, index) => {
     const row = document.createElement("tr");
 
@@ -27,6 +30,10 @@ const rankList = () => {
     const nameCell = document.createElement("td");
     nameCell.textContent = player.name;
     row.appendChild(nameCell);
+
+    const areaCell = document.createElement("td");
+    areaCell.textContent = player.area;
+    row.appendChild(areaCell);
 
     const timeCell = document.createElement("td");
     timeCell.textContent = player.time;

@@ -106,15 +106,7 @@ select:invalid {
   border-color: rgb(236, 114, 3);
 }
 
-.tierlist {
-  display: flex;
-}
 
-.tierlist > table {
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
 
 @media only screen and (max-width: 600px) {
   body {
