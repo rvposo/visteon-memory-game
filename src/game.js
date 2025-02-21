@@ -47,17 +47,17 @@ const rankPlayers = () => {
 };
 
 const startTimer = () => {
-  let timeLeft = 30;
-  timer.innerHTML = timeLeft;
+  let timeLeft = 30.0;
+  timer.innerHTML = timeLeft.toFixed(1);
   this.loop = setInterval(() => {
-    timeLeft -= 1;
-    timer.innerHTML = timeLeft;
-    if (timeLeft === 0) {
+    timeLeft -= 0.1;
+    timer.innerHTML = timeLeft.toFixed(1);
+    if (timeLeft <= 0) {
       clearInterval(this.loop);
       alert("Game over");
       window.location = "../index.html";
     }
-  }, 1000);
+  }, 100);
 };
 
 const createElement = (tag, className) => {
